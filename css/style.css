@@ -1,0 +1,429 @@
+/*
+=====================
+CSS Style
+=====================
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --silver_blue: #B0B4BE;
+    --slateblue: #404E6C;
+    --slatebluelight: #63769d;
+    --navyblue: #414f6b;
+}
+
+/* utilities */
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.f_oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+.f_bebas {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/*
+=====================
+CSS Header
+=====================
+*/
+
+.header-navbar {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.header-navbar .navbar-brand {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.header-navbar #nav_slider>div a {
+    color: var(--bs-white);
+    text-decoration: none;
+}
+
+.header-navbar #nav_slider>div a::after {
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+
+.header-navbar.active {
+    background: var(--bs-white);
+    position: fixed;
+}
+
+.header-navbar.active #nav_slider>div a {
+    color: var(--bs-black);
+}
+
+.header-navbar.active #nav_slider>div a::after {
+    opacity: 1;
+}
+
+.header-navbar .navbar-brand-1,
+.header-navbar.active .navbar-brand-2 {
+    visibility: visible;
+    opacity: 1;
+}
+
+.header-navbar.active .header-navbar .navbar-brand-1 {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.nav_link {
+    position: relative;
+    color: var(--bs-black);
+    font-weight: 600;
+    padding-bottom: 0;
+    padding-left: 0 !important;
+    padding-right: 10px !important;
+}
+
+.nav_link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--bs-black);
+}
+
+.nav_link.white {
+    color: var(--bs-white);
+}
+
+.nav_link.white::after {
+    background: var(--bs-white);
+}
+
+/*
+=====================
+CSS Hero
+=====================
+*/
+
+.hero-section {
+    min-height: 100vh;
+    position: relative;
+    background: url("../images/hero-bg.png") no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+.hero_after {
+    background: url("../images/hero-mountain-image.png");
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1 / .5;
+    min-height: 700px;
+}
+
+.slateblue_txt {
+    color: var(--slateblue);
+}
+
+.slatebluelight_txt {
+    color: var(--slatebluelight);
+}
+
+.navyblue_txt {
+    color: var(--navyblue)
+}
+
+.hero_text_wrapper {
+    text-align: center;
+    height: 65%;
+    position: relative;
+}
+
+#hero_heading {
+    line-height: 90%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    bottom: 0;
+}
+
+.letter_spacing_2 {
+    letter-spacing: 8px;
+}
+
+.top_heading_text {
+    transform: translate(-30px, -48px);
+}
+
+.bg_slateblue {
+    background: var(--slateblue);
+}
+
+/*
+=====================
+CSS Tab
+=====================
+*/
+
+.tab_btn {
+    padding: 8px 15px;
+    border: none;
+    font-weight: 600;
+    color: var(--silver_blue);
+    background: transparent;
+}
+
+.tab_btn.active {
+    background: var(--silver_blue);
+    color: var(--slateblue);
+    text-decoration: underline;
+}
+
+.tab_sec_wrapper {
+    background: url(../images/tab-section-img.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-top: 6rem;
+    padding-bottom: 12rem;
+}
+
+.schedule_box_wrapper {
+    max-width: 400px;
+    padding: 20px;
+    background: #ffffffad;
+}
+
+.txt_silver_blue {
+    color: var(--silver_blue);
+}
+
+/* slider */
+.cursorPointer {
+    cursor: pointer;
+}
+
+.ThumbSwiper .swiper-slide {
+    padding-top: 5%;
+    min-height: 100vh;
+}
+
+.ThumbSwiper .swiper-pagination {
+    flex-wrap: wrap !important;
+    gap: 5px;
+}
+
+.PaginationSwiper {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0;
+    right: 0;
+    z-index: 111;
+}
+
+.PaginationSwiper .swiper-wrapper {
+    justify-content: center;
+    gap: 5px;
+}
+
+.PaginationSwiper .swiper-slide {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+.PaginationSwiper .swiper-slide-active {
+    background-color: rgb(255, 255, 255);
+}
+
+.slide_top {
+    display: flex;
+    align-items: center;
+}
+
+.section-big {
+    color: #404e6c65;
+    font-size: 130px;
+}
+
+.slide_top p {
+    color: #404E6C;
+    transform: translateX(-12px);
+    -webkit-transform: translateX(-26px);
+    -moz-transform: translateX(-26px);
+    -ms-transform: translateX(-26px);
+    -o-transform: translateX(-26px);
+}
+
+.wrap_pagination {
+    background: #404e6c81;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 22;
+    width: 100%;
+}
+
+.wrap_pagination .swiper-pagination {
+    position: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap_pagination .swiper-pagination span {
+    opacity: 1 !important;
+    display: block;
+    width: 15% !important;
+    max-width: 200px;
+    min-width: 100px;
+    height: auto !important;
+    aspect-ratio: 1 / .6;
+    background: transparent !important;
+}
+
+.wrap_pagination .swiper-pagination span img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/*
+=====================
+CSS Table of Conttent 
+=====================
+*/
+
+@media(min-width: 1400px) {
+    .hero_after {
+        display: inline-block;
+        background: url("../images/hero-mountain-image.png");
+        background-repeat: repeat-x;
+        background-position: bottom center;
+        background-size: contain;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        aspect-ratio: 1 / .5;
+        max-height: 700px;
+    }
+}
+
+@media(min-width: 991px) {
+    #hero_heading {
+        font-size: 124px;
+    }
+
+}
+
+@media(max-width: 991px) {
+    .hero_after {
+        min-height: 720px;
+    }
+
+    .slide_top p {
+        transform: translateX(-16px);
+        font-size: 1.5rem;
+    }
+
+    .top_heading_text {
+        transform: translate(-16px, -28px);
+        font-size: 1.5rem;
+    }
+
+    .section-big {
+        font-size: 80px;
+    }
+}
+
+@media(max-width: 767px) {
+    .slide_top p {
+        transform: translateX(-10px);
+        -webkit-transform: translateX(-10px);
+        -moz-transform: translateX(-10px);
+        -ms-transform: translateX(-10px);
+        -o-transform: translateX(-10px);
+    }
+
+    .top_heading_sm_txt {
+        transform: translate(-10px, -14px);
+        -webkit-transform: translate(-10px, -14px);
+        -moz-transform: translate(-10px, -14px);
+        -ms-transform: translate(-10px, -14px);
+        -o-transform: translate(-10px, -14px);
+    }
+}
+
+@media(max-width: 576px) {
+
+    .header-navbar .navbar-brand-0,
+    .header-navbar.active .navbar-brand-0 {
+        visibility: visible;
+        opacity: 1;
+    }
+
+}
+
+@media(max-width: 480px) {
+    #nav_slider {
+        flex-direction: column;
+    }
+
+    .slide_top p {
+        transform: translateX(-8px);
+        -webkit-transform: translateX(-8px);
+        -moz-transform: translateX(-8px);
+        -ms-transform: translateX(-8px);
+        -o-transform: translateX(-8px);
+    }
+
+    .top_heading_sm_txt {
+        transform: translate(-8px, -10px);
+        -webkit-transform: translate(-8px, -10px);
+        -moz-transform: translate(-8px, -10px);
+        -ms-transform: translate(-8px, -10px);
+        -o-transform: translate(-8px, -10px);
+    }
+}
